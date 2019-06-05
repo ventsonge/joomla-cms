@@ -70,7 +70,8 @@ $sublayout = empty($groupByFieldset) ? 'section' : 'section-byfieldsets';
 		endforeach;
 		?>
 		<?php if ($multiple) : ?>
-			<template class="subform-repeatable-template-section"><?php echo trim(
+			<template class="subform-repeatable-template-section"><?php
+                echo htmlspecialchars(trim(
 				$this->sublayout(
 					$sublayout,
 					array(
@@ -81,7 +82,7 @@ $sublayout = empty($groupByFieldset) ? 'section' : 'section-byfieldsets';
 						'unique_subform_id' => $unique_subform_id,
 					)
 				)
-			); ?></template>
+			)); ?></template>
 		<?php endif; ?>
 		</div>
 	</div>
